@@ -25,18 +25,12 @@ class ApplicationController < ActionController::Base
     movies_2 = response_2["movies"]
     movies_3 = response_3["movies"]
     movies_4 = response_4["movies"]
-    binding.pry
+
     all_movies = movies_1 + movies_2 + movies_3 + movies_4
     unique_movies = all_movies.uniq
 
     unique_movies_above_90 = unique_movies.select do |movie|
       movie["ratings"]["critics_score"] >= 90
-    end
-
-    binding.pry
-
-    above_90_titles = unique_movies_above_90.map do |movie|
-      movie["title"]
     end
 
     zip_code = 22042
@@ -56,6 +50,8 @@ class ApplicationController < ActionController::Base
     # genre
     # parental guidance rating
 
-    best_of_both_worlds = above_90_titles & zip_showings
+    final_array = unique_movies_above_90.select do |movie|
+      zip_showings.include?(movie["title"])
+    end
   end
 end
