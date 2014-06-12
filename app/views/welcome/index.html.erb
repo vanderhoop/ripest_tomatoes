@@ -1,0 +1,12 @@
+<p><%= Date.today.at_beginning_of_week.strftime %> to <%= Date.today.end_of_week %></p>
+
+<h1>This Week's Ripest Tomatoes</h1>
+
+<hr>
+
+<ol>
+  <% @valid_movies.each do |movie| %>
+  <li><%= movie["ratings"]["critics_score"] %> | <%= movie["title"] %></li>
+  <% end %>
+</ol>
+

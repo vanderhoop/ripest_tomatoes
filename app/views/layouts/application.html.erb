@@ -8,6 +8,7 @@
 </head>
 <body>
   <div class='nav'>
+    <p>Ripest Tomatoes</p>
     <% if user_signed_in? %>
       <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
     <% end %>
