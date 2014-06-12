@@ -6,7 +6,7 @@
 
 <ol>
   <% @valid_movies.each do |movie| %>
-  <li><%= movie["ratings"]["critics_score"] %> | <%= movie["title"] %></li>
+  <li><%= movie["ratings"]["critics_score"] %> | <%= movie["title"] %> | <button id='pick'>Pick It!</button> | <button id='toss'>Toss It!</button></li>
   <% end %>
 </ol>
 
