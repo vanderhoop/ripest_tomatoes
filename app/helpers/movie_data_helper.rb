@@ -1,4 +1,4 @@
-module MovieData
+module MovieDataHelper
 
   def movie_info
     in_theater_movies_1 = HTTParty.get("http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=#{ROTTEN_TOMATOES_API_KEY}&page_limit=50&page=1")
