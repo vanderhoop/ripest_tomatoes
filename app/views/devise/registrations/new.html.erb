@@ -15,6 +15,9 @@
   <div><%= f.label :phone_number %><br />
     <%= f.telephone_field :phone_number, maxlength: 10 %></div>
 
+  <div><%= f.label :zip_code %><br />
+    <%= f.text_field :zip_code, maxlength: 5 %></div>
+
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 
