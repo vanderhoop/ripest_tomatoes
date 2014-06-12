@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :follows
-  has_many :movies, through: :follows
+  has_many :interactions
+  has_many :movies, through: :interactions
 
 
   def phone_number_must_contain_only_numbers
