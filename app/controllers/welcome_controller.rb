@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
 
   def index
     binding.pry
-    # shows top movies by default
+    @valid_movies = movie_info
   end
 
 
