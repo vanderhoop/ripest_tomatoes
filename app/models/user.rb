@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
       movie["ratings"]["critics_score"] >= 90
     end
 
-    zip_code = self.zip_code
+    zip_code = self.zip_code.to_i
     radius = 5
     radius_units = 'mi'
     today = Time.now.strftime("%F")
