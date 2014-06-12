@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
       movie["ratings"]["critics_score"] >= 90
     end
 
-    zip_code = 22042
+    zip_code = 20001
     radius = 5
     radius_units = 'mi'
     today = Time.now.strftime("%F")
