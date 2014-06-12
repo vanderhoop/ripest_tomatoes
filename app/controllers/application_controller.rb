@@ -33,6 +33,8 @@ class ApplicationController < ActionController::Base
       movie["ratings"]["critics_score"] >= 90
     end
 
+    binding.pry
+
     above_90_titles = unique_movies_above_90.map do |movie|
       movie["title"]
     end
@@ -47,6 +49,12 @@ class ApplicationController < ActionController::Base
     zip_showings = results.map do |result|
       result["title"]
     end
+
+    # critics aggregate rating in %
+    # movie title
+    # rotten tomatoes id
+    # genre
+    # parental guidance rating
 
     best_of_both_worlds = above_90_titles & zip_showings
   end
