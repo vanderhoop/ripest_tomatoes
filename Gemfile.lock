@@ -187,6 +187,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  addressable
   capybara
   coffee-rails (~> 4.0.0)
   devise
