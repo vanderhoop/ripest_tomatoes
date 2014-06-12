@@ -24,6 +24,20 @@ class MoviesController < ApplicationController
     above_90_titles = unique_movies_above_90.map do |movie|
       movie["title"]
     end
-    binding.pry
+
+    zip_code = 22042
+    radius = 5
+    radius_units = 'mi'
+    today = Time.now.strftime("%F")
+
+    results = HTTParty.get("http://data.tmsapi.com/v1/movies/showings?startDate=#{today}&zip=#{zip_code}&radius=#{radius}&units=#{radius_units}&api_key=#{ON_CONNECT_API_KEY}")
+
+    zip_showings = results.map do |result|
+      result["title"]
+    end
+
+    best_of_both_worlds = above_90_titles & zip_showings
+
+    puts best_of_both_worlds
   end
 end
